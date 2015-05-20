@@ -52,7 +52,7 @@ class PropertyView extends Component{
 
 		return (
 			<View style={styles.container}>
-				<Image style={styles.images} source={{uri: property.img_url}} />
+				<Image style={styles.image} source={{uri: property.img_url}} />
 				<View style={styles.heading}>
 					<Text style={styles.price}>£{price}</Text>
 					<Text style={styles.title}>{property.title}</Text>
@@ -65,3 +65,5 @@ class PropertyView extends Component{
 
 	}
 }
+
+module.exports = PropertyView;
