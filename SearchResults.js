@@ -1,4 +1,5 @@
 var React = require('react-native');
+var PropertyView = require("./PropertyView");
 var {
 	Text,
 	StyleSheet,
@@ -49,6 +50,11 @@ class SearchResults extends Component{
 	}
 	rowPressed(propertyGuid){
 		var property = this.props.listings.filter(prop=>prop.guid === propertyGuid)[0];
+		this.props.navigator.push({
+			title: "Property",
+			component: PropertyView,
+			passProps: {property: property}
+		});
 	}
 	renderRow(rowData, sectionID, rowID){
 		var price = rowData.price_formatted.split(' ')[0];
